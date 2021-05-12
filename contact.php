@@ -9,4 +9,5 @@ $headers = "From: noreply@pvverma703.com";
 if($email!=NULL){
     mail($to,$subject,$text,$headers);
 }
+header("Location:thankyou.html");
 ?>
