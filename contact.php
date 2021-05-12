@@ -1,15 +1,12 @@
 <?php
-$name = $_REQUEST['name'];
-$email = $_REQUEST['email'];
-$message = $_REQUEST['message'];
-
-if (empty($name) || empty($email) || empty($message))
-{
-    echo "Please fill all the fields";
-}
-else
-{
-    mail("pvverma703@gmail.com", "Aprudent Message", $message, "from: $name<$email>");
-    echo "<script type= 'text/javascript'>alert('Your message sent successfully')</script>";
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+$to = "pvverma703@gmail.com";
+$subject = "mail from Apurdent";
+$text = "Name = ". $name . "\r\n Email = " . $email . "\r\n Meassage = " . $message;
+$headers = "From: noreply@pvverma703.com";
+if($email!=NULL){
+    mail($to,$subject,$text,$headers);
 }
 ?>
